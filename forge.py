@@ -2,6 +2,7 @@ from dataclasses import dataclass
 import requests
 import requests_cache
 import os
+from constants import USER_AGENT
 
 session = None
 if os.getenv("FLASK_ENV") == 'development':
@@ -19,6 +20,6 @@ class Forge:
 
 
 	def searchfor(self, query:str):
-		result = session.get(self.apisearchurl.format(query=query))
+		result = session.get(self.apisearchurl.format(query=query), headers=USER_AGENT)
 		return result
 		

@@ -2,6 +2,7 @@ from forge import Forge, session
 from result import Result
 import os
 import json
+from constants import USER_AGENT
 
 def format_result(r, forge):
 	return Result(
@@ -21,7 +22,7 @@ class GitLab(Forge):
 	def searchfor(self, query:str):
 		token = os.getenv("GITLAB_TOKEN")
 		if token != None:
-			results = session.get(self.apisearchurl.format(query=query), headers = {"PRIVATE-TOKEN": token})
+			results = session.get(self.apisearchurl.format(query=query), headers = USER_AGENT.update({"PRIVATE-TOKEN": token}))
 
 			results = results.json()
 			res = map(lambda r: format_result(r, self), results)
