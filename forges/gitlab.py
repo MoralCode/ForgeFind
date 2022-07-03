@@ -24,11 +24,7 @@ class GitLab(Forge):
 			results = session.get(self.apisearchurl.format(query=query), headers = {"PRIVATE-TOKEN": token})
 
 			results = results.json()
-			print(results)
-
 			res = map(lambda r: format_result(r, self), results)
-			print(res)
-
 			return res
 		return []
 		# print(result)
