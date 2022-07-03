@@ -18,7 +18,10 @@ This is a simple, hacked-together python webapp to serve as a proof-of-concept d
 ### Environment variables
 `GITLAB_TOKEN` - [a token appropriate for accessing the gitlab.com api](https://docs.gitlab.com/ee/api/#authentication).
 
+## Hosting
+There is a docker container intended for hosting this. to build it run `docker build -t forgefind .`, to run it interactively, use `docker run  -it --rm -p 5000:5000 forgefind`
 
+You will need to specify your environment variables when running the container either using `--env-file=.env` or specifying each variable with `-e`
 
 ## Forge support:
 Currently the following forges are included in results:
