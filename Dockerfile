@@ -8,7 +8,7 @@ COPY Pipfile /app
 COPY Pipfile.lock /app
 COPY *.py /app/
 COPY templates /app/templates
-COPY static /app/forges 
+COPY static /app/static
 COPY forges /app/forges 
 
 
