@@ -24,8 +24,12 @@ class GitLab(Forge):
 		if token != None:
 			results = session.get(self.apisearchurl.format(query=query), headers = USER_AGENT.update({"PRIVATE-TOKEN": token}))
 
-			results = results.json()
-			res = map(lambda r: format_result(r, self), results)
-			return res
+			if results.status_code != 200:
+				print("Gitlab error: " + results.text)
+				return []
+			else:
+				results = results.json()
+				res = map(lambda r: format_result(r, self), results)
+				return res
 		return []
 		# print(result)
