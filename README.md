@@ -26,3 +26,9 @@ Currently the following forges are included in results:
 - GitLab
 - Gitea
 
+
+## Project Limitations/intentions
+
+Currently this project is intended to be a proof of concept.
+
+It mostly relies on anonymously accessing public API's of various hosting providers and is therefore not able to handle the kinds of high-volume use that can result from having more than a few users. Therefore this should be considered to be "for personal use"
