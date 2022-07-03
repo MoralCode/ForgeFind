@@ -13,6 +13,10 @@ def format_result(r, forge):
 	)
 
 class GitLab(Forge):
+
+	def __init__(self):
+		super().__init__("GitLab", "https://gitlab.com/search?search={query}", "https://gitlab.com/api/v4/search?scope=projects&search={query}")
+
 	# https://docs.gitlab.com/ee/api/search.html
 	def searchfor(self, query:str):
 		token = os.getenv("GITLAB_TOKEN")

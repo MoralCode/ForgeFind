@@ -14,6 +14,9 @@ def format_result(r, forge):
 
 class GitHub(Forge):
 
+	def __init__(self):
+		super().__init__("GitHub", "https://github.com/search?q={query}", "https://api.github.com/search/repositories?q={query}")
+
 	def searchfor(self, query:str):
 		results = super().searchfor(query)
 
