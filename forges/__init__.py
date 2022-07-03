@@ -2,6 +2,7 @@ from forge import Forge
 
 from forges.github import GitHub
 from forges.gitlab import GitLab
+from forges.gitea import Gitea
 
 github = GitHub("GitHub", "https://github.com/search?q={query}", "https://api.github.com/search/repositories?q={query}")
 
@@ -11,9 +12,9 @@ github = GitHub("GitHub", "https://github.com/search?q={query}", "https://api.gi
 
 # codeberg = Forge("Codeberg", "https://codeberg.org/explore/repos?tab=&sort=recentupdate&q={query}")
 
-# gitea = Forge("Gitea", "")
+gitea = Gitea("Gitea", "", "https://gitea.com/api/v1/repos/search?q={query}")
 
 
 gitlab = GitLab("GitLab", "https://gitlab.com/search?search={query}", "https://gitlab.com/api/v4/search?scope=projects&search={query}")
 
-all_forges = [github, gitlab]
+all_forges = [github, gitlab, gitea]
