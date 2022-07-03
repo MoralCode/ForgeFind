@@ -16,4 +16,4 @@ def search():
 	results = []
 	for forge in all_forges:
 		results.extend(forge.searchfor(query))
-	return render_template("results.html", results=[1,2,3])
+	return render_template("results.html", results=results)

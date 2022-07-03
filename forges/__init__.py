@@ -14,6 +14,6 @@ github = GitHub("GitHub", "https://github.com/search?q={query}", "https://api.gi
 # gitea = Forge("Gitea", "")
 
 
-gitlab = GitLab("GitLab", "https://gitlab.com/search?search={query}", "https://gitlab.com/api/v4/search?scope=projects?search={query}")
+gitlab = GitLab("GitLab", "https://gitlab.com/search?search={query}", "https://gitlab.com/api/v4/search?scope=projects&search={query}")
 
 all_forges = [github, gitlab]
