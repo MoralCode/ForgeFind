@@ -3,6 +3,7 @@ from forge import Forge
 from forges.github import GitHub
 from forges.gitlab import GitLab
 from forges.gitea import Gitea
+from forges.codeberg import Codeberg
 
 github = GitHub()
 
@@ -18,4 +19,4 @@ codeberg = Codeberg()
 
 gitlab = GitLab()
 
-all_forges = [github, gitlab, gitea]
+all_forges = [codeberg, gitlab, gitea, github]
