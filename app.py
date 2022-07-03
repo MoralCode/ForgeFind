@@ -12,4 +12,4 @@ def search():
 	# print(f"queried for {}")
 	query=request.args.get('query')
 	print(query)
-	return ""
+	return render_template("results.html", results=[1,2,3])

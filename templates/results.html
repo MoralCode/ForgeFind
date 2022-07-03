@@ -1,0 +1,11 @@
+<link rel="stylesheet" href="static/style.css">
+
+<body>
+	<h3>Code forge results</h3>
+	<a href="/"> Search again</a>
+	<ul>
+		{% for result in results %}
+		<li>{{result}}</li>
+		{% endfor %}
+	</ul>
+</body>
