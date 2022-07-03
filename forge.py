@@ -8,7 +8,7 @@ session = None
 if os.getenv("FLASK_ENV") == 'development':
 	session = requests_cache.CachedSession('forge-cache')
 else:
-	 session = requests.Session()
+	session = requests.Session()
 
 @dataclass
 class Forge:
