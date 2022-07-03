@@ -1,9 +1,13 @@
 from dataclasses import dataclass
-# import requests
+import requests
 import requests_cache
+import os
 
-
-session = requests_cache.CachedSession('forge-cache')
+session = None
+if os.getenv("FLASK_ENV") == 'development':
+	session = requests_cache.CachedSession('forge-cache')
+else:
+	 session = requests.Session()
 
 @dataclass
 class Forge:
