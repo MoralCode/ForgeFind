@@ -13,7 +13,7 @@ def format_result(r, forge):
 	)
 
 class GitLab(Forge):
-
+	# https://docs.gitlab.com/ee/api/search.html
 	def searchfor(self, query:str):
 		results = session.get(self.apisearchurl.format(query=query), headers = {"PRIVATE-TOKEN": os.getenv("GITLAB_TOKEN")})
 
