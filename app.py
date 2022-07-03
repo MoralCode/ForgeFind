@@ -12,7 +12,7 @@ def index():
 def search():
 	# print(f"queried for {}")
 	query=request.args.get('query')
-	print(query)
+	print("handling query: " + query)
 	results = []
 	for forge in all_forges:
 		results.extend(forge.searchfor(query))
