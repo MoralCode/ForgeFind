@@ -17,7 +17,7 @@ class Gitea(Forge):
 	BASE_URL = "https://gitea.com"
 
 	def __init__(self):
-		super().__init__("Gitea", "", BASE_URL + "/api/v1/repos/search?q={query}")
+		super().__init__("Gitea", "", self.BASE_URL + "/api/v1/repos/search?q={query}")
 
 	# https://try.gitea.io/api/swagger#/repository/repoSearch
 	def searchfor(self, query:str):
