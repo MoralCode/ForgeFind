@@ -15,13 +15,16 @@ def format_result(r, forge):
 class GitLab(Forge):
 	# https://docs.gitlab.com/ee/api/search.html
 	def searchfor(self, query:str):
-		results = session.get(self.apisearchurl.format(query=query), headers = {"PRIVATE-TOKEN": os.getenv("GITLAB_TOKEN")})
+		token = os.getenv("GITLAB_TOKEN")
+		if token != None:
+			results = session.get(self.apisearchurl.format(query=query), headers = {"PRIVATE-TOKEN": token})
 
-		results = results.json()
-		print(results)
+			results = results.json()
+			print(results)
 
-		res = map(lambda r: format_result(r, self), results)
-		print(res)
+			res = map(lambda r: format_result(r, self), results)
+			print(res)
 
-		return res
+			return res
+		return []
 		# print(result)
