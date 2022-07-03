@@ -1,5 +1,9 @@
 from dataclasses import dataclass
-import requests
+# import requests
+import requests_cache
+
+
+session = requests_cache.CachedSession('forge-cache')
 
 @dataclass
 class Forge:
@@ -11,6 +15,6 @@ class Forge:
 
 
 	def searchfor(self, query:str):
-		result = requests.get(self.apisearchurl.format(query=query))
+		result = session.get(self.apisearchurl.format(query=query))
 		return result
 		
